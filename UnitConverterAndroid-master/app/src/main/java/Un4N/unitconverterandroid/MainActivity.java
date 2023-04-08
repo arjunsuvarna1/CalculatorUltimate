@@ -1,38 +1,51 @@
 package Un4N.unitconverterandroid;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.icu.util.Currency;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.TextInputEditText;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
-{
 
-    private Button UnitConverterButton;
-    private Button CurrencyConverterButton;
+//import com.example.se1_sample.databinding.ActivityMainBinding;
+
+public class MainActivity extends AppCompatActivity {
+
+    CardView cardDark_Light;
+    CardView cardCurreny_Converter;
+    CardView cardCalculator;
+    CardView cardUnit_Converter;
+    CardView cardNearest_Bank_Locator;
+    CardView cardCurrency_Trends;
+
+//    private ActivityMainBinding binding;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.activity_main);
 
-        UnitConverterButton = (Button) findViewById(R.id.unitConverter_button);
-        CurrencyConverterButton = (Button) findViewById(R.id.currencyConverter_button);
+//        binding = ActivityMainBinding.inflate(getLayoutInflater());
+//        setContentView(binding.getRoot());
 
-        UnitConverterButton.setOnClickListener(new View.OnClickListener()
+        cardDark_Light=findViewById(R.id.cardDark_Light);
+        cardCurreny_Converter=findViewById(R.id.cardCurrency_Converter);
+        cardCalculator=findViewById(R.id.cardCalculator);
+        cardUnit_Converter=findViewById(R.id.cardUnit_Converter);
+        cardNearest_Bank_Locator=findViewById(R.id.cardNearest_Bank_Locator);
+        cardCurrency_Trends=findViewById(R.id.cardCurrency_Trends);
+
+        cardCalculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
+
+
+        cardUnit_Converter.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -41,15 +54,12 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        CurrencyConverterButton.setOnClickListener(new View.OnClickListener()
-        {
+        cardCurreny_Converter.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CurrencyActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }
