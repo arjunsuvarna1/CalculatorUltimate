@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
+public class TemperatureActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_temperature);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_main)
         {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, TemperatureActivity.class);
             startActivity(intent);
         }
         else if (id == R.id.nav_length)

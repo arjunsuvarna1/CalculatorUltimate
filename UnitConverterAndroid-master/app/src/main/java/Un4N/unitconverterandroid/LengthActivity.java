@@ -360,7 +360,7 @@ public class LengthActivity extends AppCompatActivity
 
         if (id == R.id.nav_main)
         {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, TemperatureActivity.class);
             startActivity(intent);
         }
         else if (id == R.id.nav_length)
