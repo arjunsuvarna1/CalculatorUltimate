@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class CurrencyActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener
+//        implements NavigationView.OnNavigationItemSelectedListener
 {
 
     private Double usd;
@@ -41,17 +41,17 @@ public class CurrencyActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.addDrawerListener(toggle);
+//        toggle.syncState();
+//
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
 
         usdText = (TextInputEditText) findViewById(R.id.usd_box);
         inrText = (TextInputEditText) findViewById(R.id. inr_box);
@@ -243,43 +243,43 @@ public class CurrencyActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item)
-    {
-        int id = item.getItemId();
-
-        if (id == R.id.nav_main)
-        {
-            Intent intent = new Intent(this, TemperatureActivity.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_length)
-        {
-            Intent intent = new Intent(this, LengthActivity.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_number)
-        {
-            Intent intent = new Intent(this, NumberActivity.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_volume)
-        {
-            Intent intent = new Intent(this, VolumeActivity.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_area)
-        {
-            Intent intent = new Intent(this, AreaActivity.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.nav_currency)
-        {
-            Intent intent = new Intent(this, CurrencyActivity.class);
-            startActivity(intent);
-        }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item)
+//    {
+//        int id = item.getItemId();
+//
+//        if (id == R.id.nav_main)
+//        {
+//            Intent intent = new Intent(this, TemperatureActivity.class);
+//            startActivity(intent);
+//        }
+//        else if (id == R.id.nav_length)
+//        {
+//            Intent intent = new Intent(this, LengthActivity.class);
+//            startActivity(intent);
+//        }
+//        else if (id == R.id.nav_number)
+//        {
+//            Intent intent = new Intent(this, NumberActivity.class);
+//            startActivity(intent);
+//        }
+//        else if (id == R.id.nav_volume)
+//        {
+//            Intent intent = new Intent(this, VolumeActivity.class);
+//            startActivity(intent);
+//        }
+//        else if (id == R.id.nav_area)
+//        {
+//            Intent intent = new Intent(this, AreaActivity.class);
+//            startActivity(intent);
+//        }
+//        else if (id == R.id.nav_currency)
+//        {
+//            Intent intent = new Intent(this, CurrencyActivity.class);
+//            startActivity(intent);
+//        }
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        drawer.closeDrawer(GravityCompat.START);
+//        return true;
+//    }
 }

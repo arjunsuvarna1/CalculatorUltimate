@@ -221,11 +221,11 @@ public class TemperatureActivity extends AppCompatActivity
             Intent intent = new Intent(this, AreaActivity.class);
             startActivity(intent);
         }
-        else if (id == R.id.nav_currency)
-        {
-            Intent intent = new Intent(this, CurrencyActivity.class);
-            startActivity(intent);
-        }
+//        else if (id == R.id.nav_currency)
+//        {
+//            Intent intent = new Intent(this, CurrencyActivity.class);
+//            startActivity(intent);
+//        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

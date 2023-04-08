@@ -26,10 +26,10 @@
                     android:id="@+id/nav_area"
                     android:icon="@drawable/ic_baseline_area_chart_24"
                     android:title="@string/area_converter" />
-                <item
-                    android:id="@+id/nav_currency"
-                    android:icon="@drawable/baseline_currency_exchange_24"
-                    android:title="@string/currency_converter" />
+<!--                <item-->
+<!--                    android:id="@+id/nav_currency"-->
+<!--                    android:icon="@drawable/baseline_currency_exchange_24"-->
+<!--                    android:title="@string/currency_converter" />-->
             </menu>
         </item>
     </group>
