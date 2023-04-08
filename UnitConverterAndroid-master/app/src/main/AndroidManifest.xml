@@ -39,9 +39,13 @@
             android:label="@string/title_activity_temperature"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
-            android:name=".MainActivity2"
+            android:name=".ScientificCalculatorMainActivity"
+            android:label="Scientific Calculator"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CalculatorDashboard"
             android:exported="false" />
 
         <activity

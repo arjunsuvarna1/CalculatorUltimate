@@ -5,4 +5,6 @@
     <color name="colorAccent">#2398AB</color>
     <color name="colorBlack">#333333</color>
     <color name="black">#333333</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorSecondaryLite">#FF03DAC5</color>
 </resources>

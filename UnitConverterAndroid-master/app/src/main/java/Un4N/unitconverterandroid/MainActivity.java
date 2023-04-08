@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
 
 
 //import com.example.se1_sample.databinding.ActivityMainBinding;
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         cardCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                Intent intent = new Intent(MainActivity.this, CalculatorDashboard.class);
                 startActivity(intent);
             }
         });
