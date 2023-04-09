@@ -21,6 +21,13 @@ public class CalculatorDashboard extends AppCompatActivity {
         basicCardCalculator=findViewById(R.id.cardBasic_Calculator);
         sciCardCalculator=findViewById(R.id.cardScientific_Calculator);
 
+        basicCardCalculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CalculatorDashboard.this, BasicCalculatorActivity.class);
+                startActivity(intent);
+            }
+        });
         sciCardCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,5 +35,6 @@ public class CalculatorDashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

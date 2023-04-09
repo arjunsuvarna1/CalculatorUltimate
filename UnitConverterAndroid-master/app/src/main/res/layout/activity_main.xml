@@ -53,7 +53,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Dark_light"
+                        android:text="Dark light"
                         android:textSize="16sp"
                         android:textColor="@color/colorBlack"/>
                 </LinearLayout>
@@ -86,7 +86,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Currency_Converter"
+                        android:text="Currency Converter"
                         android:textSize="16sp"
                         android:textColor="@color/colorBlack"/>
                 </LinearLayout>
@@ -153,7 +153,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Unit_Converter"
+                        android:text="Unit Converter"
                         android:textColor="@color/colorBlack"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -186,7 +186,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nearest_Bank_Locator"
+                        android:text="Nearest Bank Locator"
                         android:textSize="16sp"
                         android:textColor="@color/colorBlack"/>
                 </LinearLayout>
@@ -219,7 +219,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Currency_Trends"
+                        android:text="Currency Trends"
                         android:textSize="16sp"
                         android:textColor="@color/colorBlack"/>
                 </LinearLayout>

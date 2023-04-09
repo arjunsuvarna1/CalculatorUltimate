@@ -11,6 +11,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    public Boolean lighttheme = true;
     CardView cardDark_Light;
     CardView cardCurreny_Converter;
     CardView cardCalculator;
@@ -58,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CurrencyActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        cardDark_Light.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lighttheme = !lighttheme;
             }
         });
     }

@@ -44,6 +44,11 @@
             android:label="Scientific Calculator"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".BasicCalculatorActivity"
+            android:label="Basic Calculator"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CalculatorDashboard"
             android:exported="false" />
