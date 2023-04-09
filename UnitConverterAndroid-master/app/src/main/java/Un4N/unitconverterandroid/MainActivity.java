@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.TextView;
 
 
 //import com.example.se1_sample.databinding.ActivityMainBinding;
@@ -65,7 +66,28 @@ public class MainActivity extends AppCompatActivity {
         cardDark_Light.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                TextView cardDark_Light_txt = findViewById(R.id.cardDark_Light_txt);
+
                 lighttheme = !lighttheme;
+                if(!lighttheme) {
+                    cardDark_Light.setCardBackgroundColor(getResources().getColor(R.color.colorBlack));
+                    cardDark_Light_txt.setTextColor(getResources().getColor(R.color.white));
+                    cardCalculator.setCardBackgroundColor(getResources().getColor(R.color.colorBlack));
+                    cardCurrency_Trends.setCardBackgroundColor(getResources().getColor(R.color.colorBlack));
+                    cardCurreny_Converter.setCardBackgroundColor(getResources().getColor(R.color.colorBlack));
+                    cardUnit_Converter.setCardBackgroundColor(getResources().getColor(R.color.colorBlack));
+                    cardNearest_Bank_Locator.setCardBackgroundColor(getResources().getColor(R.color.colorBlack));
+                }
+                else {
+                    cardDark_Light.setCardBackgroundColor(getResources().getColor(R.color.white));
+                    cardDark_Light_txt.setTextColor(getResources().getColor(R.color.black));
+
+                    cardCalculator.setCardBackgroundColor(getResources().getColor(R.color.white));
+                    cardCurrency_Trends.setCardBackgroundColor(getResources().getColor(R.color.white));
+                    cardCurreny_Converter.setCardBackgroundColor(getResources().getColor(R.color.white));
+                    cardUnit_Converter.setCardBackgroundColor(getResources().getColor(R.color.white));
+                    cardNearest_Bank_Locator.setCardBackgroundColor(getResources().getColor(R.color.white));
+                }
             }
         });
     }
