@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public Boolean lighttheme = true;
+    public static Boolean lighttheme = true;
     CardView cardDark_Light;
     CardView cardCurreny_Converter;
     CardView cardCalculator;
@@ -59,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CurrencyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardCurrency_Trends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TrendsActivity.class);
                 startActivity(intent);
             }
         });

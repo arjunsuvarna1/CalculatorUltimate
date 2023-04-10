@@ -1,5 +1,6 @@
 package Un4N.unitconverterandroid;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -9,20 +10,42 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.textclassifier.TextClassification;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.apptakk.http_request.HttpRequest;
+import com.apptakk.http_request.HttpRequestTask;
+import com.apptakk.http_request.HttpResponse;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class CurrencyActivity extends AppCompatActivity
 //        implements NavigationView.OnNavigationItemSelectedListener
 {
 
     private Double usd;
+    private Double usdRate;
     private Double inr;
+
+    private Double inrRate;
     private Double eur;
+    private Double eurRate;
     private Double gbp;
+    private Double gbpRate;
 
     private TextInputEditText usdText;
     private TextInputEditText inrText;
@@ -39,6 +62,37 @@ public class CurrencyActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        new HttpRequestTask(
+                new HttpRequest("https://api.exchangerate.host/latest?base=USD", HttpRequest.GET),
+                new HttpRequest.Handler() {
+                    @Override
+                    public void response(HttpResponse response) {
+                        if (response.code == 200) {
+
+                            JSONObject mainObject = null;
+                            try {
+                                mainObject = new JSONObject(response.body.toString());
+                                JSONObject rates = mainObject.getJSONObject("rates");
+                                String  usdrate = rates.getString("USD");
+                                usdRate= Double.parseDouble(usdrate);
+                                inrRate = Double.parseDouble(rates.getString("INR"));
+                                eurRate = Double.parseDouble(rates.getString("EUR"));
+                                gbpRate = Double.parseDouble(rates.getString("GBP"));
+                                Log.d(this.getClass().toString(), "Request successful!");
+                            } catch (JSONException e) {
+                                throw new RuntimeException(e);
+                            }
+
+
+                        } else {
+                            Log.e(this.getClass().toString(), "Request unsuccessful: " + response);
+                        }
+                    }
+                }).execute();
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -127,9 +181,9 @@ public class CurrencyActivity extends AppCompatActivity
         {
             
             usd = Double.parseDouble(usdText.getText().toString());
-            eur = usd * 0.94;
-            inr = usd * 82.54;
-            gbp = usd * 0.82;
+            eur = usd * eurRate;
+            inr = usd * inrRate;
+            gbp = usd * gbpRate;
             eurText.setText(String.format("%.2f", eur));
             inrText.setText(String.format("%.2f", inr));
             gbpText.setText(String.format("%.2f", gbp));
@@ -152,9 +206,9 @@ public class CurrencyActivity extends AppCompatActivity
         try
         {
             inr = Double.parseDouble(inrText.getText().toString());
-            usd = inr / 82.54;
-            eur = usd * 0.94;
-            gbp = usd * 0.82;
+            usd = inr / inrRate;
+            eur = usd * eurRate;
+            gbp = usd * gbpRate;
             eurText.setText(String.format("%.2f", eur));
             usdText.setText(String.format("%.2f", usd));
             gbpText.setText(String.format("%.2f", gbp));
@@ -177,9 +231,9 @@ public class CurrencyActivity extends AppCompatActivity
         try
         {
             eur = Double.parseDouble(eurText.getText().toString());
-            usd = eur / 0.94;
-            inr = usd * 82.54;
-            gbp = usd * 0.82;
+            usd = eur / eurRate;
+            inr = usd * inrRate;
+            gbp = usd * gbpRate;
             usdText.setText(String.format("%.2f", usd));
             inrText.setText(String.format("%.2f", inr));
             gbpText.setText(String.format("%.2f", gbp));
@@ -202,9 +256,9 @@ public class CurrencyActivity extends AppCompatActivity
         try
         {
             gbp = Double.parseDouble(gbpText.getText().toString());
-            usd = gbp / 0.82;
-            eur = usd * 0.94;
-            inr = usd * 82.54;
+            usd = gbp / gbpRate;
+            eur = usd * eurRate;
+            inr = usd * inrRate;
 
             eurText.setText(String.format("%.2f", eur));
             inrText.setText(String.format("%.2f", inr));

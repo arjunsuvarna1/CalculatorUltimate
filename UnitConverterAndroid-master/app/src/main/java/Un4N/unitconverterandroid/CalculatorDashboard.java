@@ -21,6 +21,15 @@ public class CalculatorDashboard extends AppCompatActivity {
         basicCardCalculator=findViewById(R.id.cardBasic_Calculator);
         sciCardCalculator=findViewById(R.id.cardScientific_Calculator);
 
+        if(!MainActivity.lighttheme) {
+            basicCardCalculator.setCardBackgroundColor(getResources().getColor(R.color.colorBlack));
+//            cardDark_Light_txt.setTextColor(getResources().getColor(R.color.white));
+        }
+        else {
+            basicCardCalculator.setCardBackgroundColor(getResources().getColor(R.color.white));
+//            cardDark_Light_txt.setTextColor(getResources().getColor(R.color.black));
+        }
+        
         basicCardCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
