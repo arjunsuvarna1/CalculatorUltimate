@@ -71,6 +71,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //bank locator part added below
+
+        cardNearest_Bank_Locator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BankLocatorActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //bank locator part added above
+
+
         cardDark_Light.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -49,6 +49,15 @@
             android:label="Currency Trends"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--        trial starts here-->
+        <activity
+            android:name=".BankLocatorActivity"
+            android:label="Nearest Bank Locator"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--        trial ends above    -->
         <activity
             android:name=".BasicCalculatorActivity"
             android:label="Basic Calculator"
