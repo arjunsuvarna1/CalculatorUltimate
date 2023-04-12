@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.0"
         />
 
-<!--    trial-->
+    <!--    trial-->
 
     <TextView
         android:id="@+id/title"
@@ -55,83 +55,128 @@
 
     <Button
         android:id="@+id/searchButton"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/searchBox"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="144dp"
         android:layout_marginEnd="144dp"
         android:layout_marginBottom="400dp"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/white"
         android:text="Find Banks"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchBox"
         app:layout_constraintVertical_bias="0.204" />
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="400dp"
+        android:stretchColumns="1">
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:id="@+id/bank1"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/address1"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:id="@+id/bank2"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/address2"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:id="@+id/bank3"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/address3"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+    </TableLayout>
 </android.support.constraint.ConstraintLayout>
 
 
 
 
+
+
     <!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--xmlns:tools="http://schemas.android.com/tools"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-<!--tools:context=".BankLocatorActivity">-->
+    <!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context=".BankLocatorActivity">-->
 
-<!--    <TextView-->
-<!--        android:id="@+id/title"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginStart="135dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginEnd="135dp"-->
-<!--        android:layout_marginBottom="16dp"-->
-<!--        android:text="Look for banks"-->
-<!--        android:textSize="24sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/searchBox"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/title"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginStart="135dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:layout_marginEnd="135dp"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        android:text="Look for banks"-->
+    <!--        android:textSize="24sp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/searchBox"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-<!--    <EditText-->
-<!--        android:id="@+id/searchBox"-->
-<!--        android:layout_width="240dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/title"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginStart="86dp"-->
-<!--        android:layout_marginEnd="86dp"-->
-<!--        android:layout_marginBottom="16dp"-->
-<!--        android:hint="Enter the zipcode"-->
-<!--        android:inputType="number"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/searchButton"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="1.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/title" />-->
+    <!--    <EditText-->
+    <!--        android:id="@+id/searchBox"-->
+    <!--        android:layout_width="240dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/title"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginStart="86dp"-->
+    <!--        android:layout_marginEnd="86dp"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        android:hint="Enter the zipcode"-->
+    <!--        android:inputType="number"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/searchButton"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/title" />-->
 
-<!--    <Button-->
-<!--        android:id="@+id/searchButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/searchBox"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginStart="144dp"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_marginEnd="144dp"-->
-<!--        android:layout_marginBottom="342dp"-->
-<!--        android:text="Find Banks"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/searchBox" />-->
-<!--    -->
+    <!--    <Button-->
+    <!--        android:id="@+id/searchButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/searchBox"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginStart="144dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginEnd="144dp"-->
+    <!--        android:layout_marginBottom="342dp"-->
+    <!--        android:text="Find Banks"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/searchBox" />-->
+    <!--    -->
 
-<!--</android.support.constraint.ConstraintLayout>-->
+    <!--</android.support.constraint.ConstraintLayout>-->
